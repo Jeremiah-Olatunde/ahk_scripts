@@ -6,3 +6,49 @@
 CapsLock::LControl
 
 ;------------------------------------------------------------------------------
+
+; COLEMAK
+; layout inspired by colemak, deprioritizing the symbol keys
+; which are moved to the symbol layer
+;------------------------------------------------------------------------------
+
+; TOP ROW
+q::q
+w::w
+e::f
+r::p
+t::g
+; y::
+; u::
+i::j
+o::l
+p::u
+[::y
+; ]::
+
+; HOME ROW
+a::a
+s::r
+d::s
+f::t
+g::d
+; h::
+j::h
+k::n
+l::e
+`;::i
+'::o
+
+; BOTTOM ROW
+z::z
+x::x
+c::c
+v::v
+; b::
+; n::
+; m::
+,::b
+.::k
+/::m
+
+;------------------------------------------------------------------------------
