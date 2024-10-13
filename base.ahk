@@ -18,8 +18,8 @@ w::w
 e::f
 r::p
 t::g
-; y::
-; u::
+y::Return
+u::Return
 i::j
 o::l
 p::u
@@ -32,7 +32,7 @@ s::r
 d::s
 f::t
 g::d
-; h::
+h::Return
 j::h
 k::n
 l::e
@@ -44,9 +44,9 @@ z::z
 x::x
 c::c
 v::v
-; b::
-; n::
-; m::
+b::Return
+n::Return
+m::Return
 ,::b
 .::k
 /::m
