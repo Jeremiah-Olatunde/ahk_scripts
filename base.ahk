@@ -11,12 +11,24 @@
 
 global Layer := "BASE" ; 
 
+; NOTE
+; executes before colemak remapping
+; keys are mapped as they are by default
+
 ; f key always returns to BASE layer unless already in BASE layer
 #HotIf Layer != "BASE"
 f::{
   global Layer := "BASE"
 }
 #HotIf
+
+
+#HotIf Layer != "WM_NUM"
+b::{
+  global Layer := "NAVIGATION"
+}
+#HotIf
+
 ;------------------------------------------------------------------------------
 
 
@@ -65,6 +77,7 @@ z::z
 x::x
 c::c
 v::v
+#HotIf Layer = "WM_NUM"
 b::Return 
 n::Return
 m::Return
