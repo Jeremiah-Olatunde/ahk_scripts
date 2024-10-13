@@ -1,5 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 
+CoordMode "ToolTip", "Screen"
+
 ; LAYER CONTROL
 ;------------------------------------------------------------------------------
 
@@ -19,13 +21,17 @@ global Layer := "BASE" ;
 #HotIf Layer != "BASE"
 f::{
   global Layer := "BASE"
+  ToolTip
+  ToolTip "BASE Layer", 1920, 1080
 }
 #HotIf
 
 
 #HotIf Layer != "WM_NUM"
 b::{
-  global Layer := "NAVIGATION"
+  global Layer := "WM_NUM"
+  ToolTip
+  ToolTip "WM_NUM Layer", 1920, 1080
 }
 #HotIf
 
