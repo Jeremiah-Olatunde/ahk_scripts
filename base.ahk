@@ -52,44 +52,44 @@ CapsLock::LControl
 ;------------------------------------------------------------------------------
 
 ; TOP ROW
-q::q
-w::w
-e::f
-r::p
-t::g
-y::Return
-u::Return
-i::j
-o::l
-p::u
-[::y
-]::Return
+$q::q
+$w::w
+$e::f
+$r::p
+$t::g
+$y::Return
+$u::Return
+$i::j
+$o::l
+$p::u
+$[::y
+$]::Return
 
 ; HOME ROW
-a::a
-s::r
-d::s
+$a::a
+$s::r
+$d::s
 #HotIf Layer = "BASE"
-f::t
-g::d
-h::Return
-j::h
-k::n
-l::e
-`;::i
-'::o
+$f::t
+$g::d
+$h::Return
+$j::h
+$k::n
+$l::e
+$`;::i
+$'::o
 
 ; BOTTOM ROW
-z::z
-x::x
-c::c
-v::v
+$z::z
+$x::x
+$c::c
+$v::v
 #HotIf Layer = "WM_NUM"
-b::Return 
-n::Return
-m::Return
-,::b
-.::k
-/::m
+$b::Return
+$n::Return
+$m::Return
+$,::b
+$.::k
+$/::m
 
 ;------------------------------------------------------------------------------
