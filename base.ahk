@@ -50,11 +50,56 @@ CapsLock::LControl
 
 ;------------------------------------------------------------------------------
 
-; COLEMAK
-; layout inspired by colemak, deprioritizing the symbol keys
+; COLEMAK(DH)
+; layout inspired by colemak(dh), deprioritizing the symbol keys
 ; which are moved to the symbol layer
 ;------------------------------------------------------------------------------
 
+; COLEMAK
+; TOP ROW
+; $q::q
+; $w::w
+; $e::f
+; $r::p
+; $t::g
+; $y::Return
+; $u::Return
+; $i::j
+; $o::l
+; $p::u
+; $[::y
+; $]::Return
+
+; ; HOME ROW
+; $a::a
+; $s::r
+; $d::s
+; #HotIf Layer = "BASE"
+; $f::t
+; #HotIf
+; $g::d
+; $h::Return
+; $j::h
+; $k::n
+; $l::e
+; $`;::i
+; $'::o
+
+; ; BOTTOM ROW
+; $z::z
+; $x::x
+; $c::c
+; $v::v
+; #HotIf Layer = "WM_NUM"
+; $b::Return
+; #HotIf
+; $n::Return
+; $m::Return
+; $,::b
+; $.::k
+; $/::m
+
+; COLEMAK_DH
 ; TOP ROW
 $q::q
 $w::w
@@ -76,9 +121,9 @@ $d::s
 #HotIf Layer = "BASE"
 $f::t
 #HotIf
-$g::d
+$g::g
 $h::Return
-$j::h
+$j::m
 $k::n
 $l::e
 $`;::i
@@ -87,15 +132,17 @@ $'::o
 ; BOTTOM ROW
 $z::z
 $x::x
-$c::c
+$c::d
 $v::v
 #HotIf Layer = "WM_NUM"
 $b::Return
 #HotIf
 $n::Return
 $m::Return
-$,::b
+$,::z
 $.::k
-$/::m
+$/::h
+
 
 ;------------------------------------------------------------------------------
+
