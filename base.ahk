@@ -3,6 +3,10 @@
 
 CoordMode "ToolTip", "Screen"
 
+#SuspendExempt
+PgUp::Suspend
+#SuspendExempt False
+
 ; LAYER CONTROL
 ;------------------------------------------------------------------------------
 
@@ -71,6 +75,7 @@ $s::r
 $d::s
 #HotIf Layer = "BASE"
 $f::t
+#HotIf
 $g::d
 $h::Return
 $j::h
@@ -86,6 +91,7 @@ $c::c
 $v::v
 #HotIf Layer = "WM_NUM"
 $b::Return
+#HotIf
 $n::Return
 $m::Return
 $,::b
