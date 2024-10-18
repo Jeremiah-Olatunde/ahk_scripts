@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
 #SingleInstance Force
 
 CoordMode "ToolTip", "Screen"
@@ -105,13 +105,13 @@ $q::q
 $w::w
 $e::f
 $r::p
-$t::g
+$t::b
 $y::Return
-$u::Return
-$i::j
-$o::l
-$p::u
-$[::y
+$u::j
+$i::l
+$o::u
+$p::y
+$[::Return
 $]::Return
 
 ; HOME ROW
@@ -130,8 +130,8 @@ $`;::i
 $'::o
 
 ; BOTTOM ROW
-$z::z
-$x::x
+$z::x
+$x::c
 $c::d
 $v::v
 #HotIf Layer = "WM_NUM"
