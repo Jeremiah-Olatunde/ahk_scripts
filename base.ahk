@@ -74,3 +74,52 @@ RShift::RCtrl
 /::RShift
 
 ;------------------------------------------------------------------------------
+
+
+
+; LAYER BASE
+;------------------------------------------------------------------------------
+
+  #HotIf current_layer = "BASE"
+    ; TOP ROW
+    q::q
+    w::w
+    e::f
+    r::p
+    t::b
+    y::Return
+    u::j
+    i::l
+    o::u
+    p::y
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::a
+    s::r
+    d::s
+    f::t
+    g::g
+    h::Return
+    j::m
+    k::n
+    l::e
+    `;::i
+    '::o
+
+    ; BOTTOM ROW
+    z::x
+    x::c
+    c::d
+    v::Return
+    b::v
+    n::z
+    m::k
+    ,::h
+    .::Return
+    ; $/::Return ; ASSIGNED TO RIGHT SHIFT
+  #HotIf
+
+;------------------------------------------------------------------------------
