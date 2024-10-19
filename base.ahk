@@ -17,8 +17,6 @@
     ToolTip display_string, 1920, 1080  
   }
 
-  custom_display(script_state)
-
 ;------------------------------------------------------------------------------
 
 
@@ -27,6 +25,7 @@
 ;------------------------------------------------------------------------------
 
   Global script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
+  custom_display(script_state)
 
   #SuspendExempt
   $PgUp::{
@@ -129,5 +128,53 @@
     .::Return
     ; $/::Return ; ASSIGNED TO RIGHT SHIFT
   #HotIf
+
+;------------------------------------------------------------------------------
+
+
+; LAYER SYMBOL
+;------------------------------------------------------------------------------
+
+  #HotIf current_layer = "SYMBOL"
+    ; TOP ROW
+    q::Return
+    w::Return
+    e::Return
+    r::Return
+    t::Return
+    y::Return
+    u::Return
+    i::Return
+    o::Return
+    p::Return
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::Return
+    s::Return
+    d::Return
+    f::Return
+    g::Return
+    h::Return
+    j::Return
+    k::Return
+    l::Return
+    `;::Return
+    '::Return
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::Return
+    b::Return
+    n::Return
+    m::Return
+    ,::Return
+    .::Return
+    ; $/::Return ; ASSIGNED TO RIGHT SHIFT
+  #HotIf  
 
 ;------------------------------------------------------------------------------
