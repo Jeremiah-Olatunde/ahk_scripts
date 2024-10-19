@@ -17,3 +17,20 @@
   }
 
 ;------------------------------------------------------------------------------
+
+
+
+; SUSPEND
+;------------------------------------------------------------------------------
+
+  GLOBAL suspended := False
+
+  #SuspendExempt
+  $PgUp::{
+    Suspend
+    GLOBAL suspended := !suspended
+    custom_display(suspended ? "SUSPENDED" : "ACTIVATED")
+  }
+  #SuspendExempt False
+
+;------------------------------------------------------------------------------
