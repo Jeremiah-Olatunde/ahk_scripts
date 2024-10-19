@@ -21,6 +21,57 @@ global Layer := "BASE" ;
 
 
 
+; DEFAULT (DISABLE ALL KEYS IN LAYER)
+;------------------------------------------------------------------------------
+; #HotIf Layer = "LAYER_NAME"
+; ; TOP ROW
+; Tab::Return
+; $q::Return
+; $w::Return
+; $e::Return
+; $r::Return
+; $t::Return
+; $y::Return
+; $u::Return
+; $i::Return
+; $o::Return
+; $p::Return
+; $[::Return
+; $]::Return
+; $\::Return
+
+; ; HOME ROW
+; $CapsLock::Return
+; $a::Return
+; $s::Return
+; $d::Return
+; $f::Return
+; $g::Return
+; $h::Return
+; $j::Return
+; $k::Return
+; $l::Return
+; $`;::Return
+; $'::Return
+; $Enter::Return
+
+; ; BOTTOM ROW
+; $LShift::Return
+; $z::Return
+; $x::Return
+; $c::Return
+; $v::Return
+; $b::Return
+; $n::Return
+; $m::Return
+; $,::Return
+; $/::Return
+; $.::Return
+; #HotIf
+;------------------------------------------------------------------------------
+
+
+
 ; BASE LAYER
 ;------------------------------------------------------------------------------
 
