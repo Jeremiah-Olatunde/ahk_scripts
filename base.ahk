@@ -77,6 +77,19 @@ RShift::RCtrl
 
 
 
+; LAYER CONTROL
+;------------------------------------------------------------------------------
+
+switch_layer_symbol(){
+  Global current_layer := "SYMBOL"
+  custom_display(current_layer)
+}
+
+;------------------------------------------------------------------------------
+
+
+
+
 ; LAYER BASE
 ;------------------------------------------------------------------------------
 
@@ -113,7 +126,7 @@ RShift::RCtrl
     z::x
     x::c
     c::d
-    v::Return
+    v::switch_layer_symbol
     b::v
     n::z
     m::k
