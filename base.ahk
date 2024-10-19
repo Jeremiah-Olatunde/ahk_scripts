@@ -125,7 +125,63 @@ $b::v
 $n::Return
 $m::k
 $,::h
-$/::z
 $.::Return
+$/::z
+$RShift::RControl
+#HotIf
+;------------------------------------------------------------------------------
+
+
+; SYMBOL LAYER
+;------------------------------------------------------------------------------
+#HotIf Layer = "SYMBOL"
+; TOP ROW
+Tab::Return
+$q::Return
+$w::Return
+$e::Return
+$r::Return
+$t::Return
+$y::Return
+$u::Return
+$i::Return
+$o::{
+  global Layer := "BASE"
+  ToolTip
+  ToolTip "BASE", 1920, 1080  
+}
+$p::Return
+$[::Return
+$]::Return
+$\::Return
+
+; HOME ROW
+$CapsLock::LControl
+$a::Return
+$s::Return
+$d::Return
+$f::Return
+$g::Return
+$h::Return
+$j::Return
+$k::=
+$l::<
+$`;::Return
+$'::Return
+$Enter::Return
+
+; BOTTOM ROW
+$LShift::LShift
+$z::Return
+$x::Return
+$c::Return
+$v::Return
+$b::Return
+$n::Return
+$m::Return
+$,::Return
+$.::Return
+$/::Return
+$RShift::RControl
 #HotIf
 ;------------------------------------------------------------------------------
