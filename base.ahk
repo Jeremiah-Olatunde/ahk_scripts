@@ -6,15 +6,6 @@
 #SingleInstance Force
 
 
-; GLOBAL SCRIPT VARIABLES
-;------------------------------------------------------------------------------
-
-Global script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
-Global current_layer := "BASE" ;"BASE" | "SYMBOL"
-
-;------------------------------------------------------------------------------
-
-
 
 ; TOOLTIP
 ;------------------------------------------------------------------------------
@@ -34,6 +25,8 @@ Global current_layer := "BASE" ;"BASE" | "SYMBOL"
 
 ; SUSPEND
 ;------------------------------------------------------------------------------
+
+  Global script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
 
   #SuspendExempt
   $PgUp::{
@@ -65,13 +58,13 @@ Global current_layer := "BASE" ;"BASE" | "SYMBOL"
 ; MODIFIERS
 ;------------------------------------------------------------------------------
 
-Tab::Tab
-CapsLock::LCtrl
-LShift::LShift
+  Tab::Tab
+  CapsLock::LCtrl
+  LShift::LShift
 
-Enter::Enter
-RShift::RCtrl
-/::RShift
+  Enter::Enter
+  RShift::RCtrl
+  /::RShift
 
 ;------------------------------------------------------------------------------
 
@@ -80,10 +73,12 @@ RShift::RCtrl
 ; LAYER CONTROL
 ;------------------------------------------------------------------------------
 
-switch_layer_symbol(){
-  Global current_layer := "SYMBOL"
-  custom_display(current_layer)
-}
+  Global current_layer := "BASE" ;"BASE" | "SYMBOL"
+
+  switch_layer_symbol(){
+    Global current_layer := "SYMBOL"
+    custom_display(current_layer)
+  }
 
 ;------------------------------------------------------------------------------
 
