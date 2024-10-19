@@ -1,22 +1,19 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+CoordMode "ToolTip", "Screen"
+
 #SuspendExempt
 PgUp::Suspend
 #SuspendExempt False
 
-CoordMode "ToolTip", "Screen"
-
-
-
 ; LAYER CONTROL
 ;------------------------------------------------------------------------------
 
-; ; Layers = "BASE" | "WM_NUM" | "SYM_NAV"
+; Layers = "BASE" | "SYMBOL"
 
-; ; BASE: default layer. colemak layout 
-; ; WM_NUM: tiling window manager (komorebi) and number layer
-; ; SYM_NAV: symbols and navigation(arrow) keys
+; BASE: default layer. colemak layout 
+; SYMBOL: layer dedicated primarily to symbols
 
 global Layer := "BASE" ; 
 
@@ -68,7 +65,11 @@ $LShift::LControl
 $z::x
 $x::c
 $c::d
-$v::Return
+$v::{
+  global Layer := "SYMBOL"
+  ToolTip
+  ToolTip "SYMBOL", 1920, 1080
+}
 $b::v
 $n::Return
 $m::k
