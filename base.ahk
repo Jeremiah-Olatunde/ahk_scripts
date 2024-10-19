@@ -5,6 +5,14 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+
+; GLOBAL SCRIPT STATE
+;------------------------------------------------------------------------------
+
+GLOBAL script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
+
+;------------------------------------------------------------------------------
+
 ; TOOLTIP
 ;------------------------------------------------------------------------------
 
@@ -16,6 +24,8 @@
     ToolTip display_string, 1920, 1080  
   }
 
+  custom_display(script_state)
+
 ;------------------------------------------------------------------------------
 
 
@@ -23,13 +33,11 @@
 ; SUSPEND
 ;------------------------------------------------------------------------------
 
-  GLOBAL suspended := False
-
   #SuspendExempt
   $PgUp::{
     Suspend
-    GLOBAL suspended := !suspended
-    custom_display(suspended ? "SUSPENDED" : "ACTIVATED")
+    GLOBAL script_state := script_state = "RUNNING" ? "SUSPENDED" : "RUNNING"
+    custom_display(script_state)
   }
   #SuspendExempt False
 
