@@ -24,7 +24,7 @@ global Layer := "BASE" ;
 
 ; f key always returns to BASE layer unless already in BASE layer
 #HotIf Layer != "BASE"
-f::{
+o::{
   global Layer := "BASE"
   ToolTip
   ToolTip "BASE Layer", 1920, 1080
@@ -33,7 +33,7 @@ f::{
 
 
 #HotIf Layer != "WM_NUM"
-b::{
+n::{
   global Layer := "WM_NUM"
   ToolTip
   ToolTip "WM_NUM Layer", 1920, 1080
@@ -50,7 +50,7 @@ CapsLock::LControl
 
 ;------------------------------------------------------------------------------
 
-; COLEMAK(DH)
+; COLEMAK(DH WIDE)
 ; layout inspired by colemak(dh), deprioritizing the symbol keys
 ; which are moved to the symbol layer
 ;------------------------------------------------------------------------------
@@ -112,7 +112,7 @@ $i::l
 $o::u
 $p::y
 $[::Return
-$]::Return
+$]::BackSpace
 
 ; HOME ROW
 $a::a
@@ -133,16 +133,15 @@ $'::o
 $z::x
 $x::c
 $c::d
-$v::v
+$v::Return
+$b::v
 #HotIf Layer = "WM_NUM"
-$b::Return
-#HotIf
 $n::Return
-$m::Return
-$,::z
-$.::k
-$/::h
-
+#HotIf
+$m::k
+$,::h
+$.::Return
+$/::z
 
 ;------------------------------------------------------------------------------
 
