@@ -9,9 +9,11 @@
 ; GLOBAL SCRIPT STATE
 ;------------------------------------------------------------------------------
 
-GLOBAL script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
+Global script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
 
 ;------------------------------------------------------------------------------
+
+
 
 ; TOOLTIP
 ;------------------------------------------------------------------------------
@@ -36,7 +38,7 @@ GLOBAL script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
   #SuspendExempt
   $PgUp::{
     Suspend
-    GLOBAL script_state := script_state = "RUNNING" ? "SUSPENDED" : "RUNNING"
+    Global script_state := script_state = "RUNNING" ? "SUSPENDED" : "RUNNING"
     custom_display(script_state)
   }
   #SuspendExempt False
