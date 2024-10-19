@@ -6,10 +6,11 @@
 #SingleInstance Force
 
 
-; GLOBAL SCRIPT STATE
+; GLOBAL SCRIPT VARIABLES
 ;------------------------------------------------------------------------------
 
 Global script_state := "RUNNING" ;"RUNNING" | "SUSPENDED"
+Global current_layer := "BASE" ;"BASE" | "SYMBOL"
 
 ;------------------------------------------------------------------------------
 
