@@ -40,6 +40,15 @@ n::{
 }
 #HotIf
 
+
+#HotIf Layer != "SYM"
+v::{
+  global Layer := "SYM"
+  ToolTip
+  ToolTip "SYM Layer", 1920, 1080
+}
+#HotIf
+
 ;------------------------------------------------------------------------------
 
 
