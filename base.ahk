@@ -79,9 +79,19 @@
     custom_display(current_layer)
   }
 
+
+  switch_layer_number(){
+    Global current_layer := "NUMBER"
+    custom_display(current_layer)
+  }  
+
+
+  switch_layer_base(){
+    Global current_layer := "BASE"
+    custom_display(current_layer)
+  }      
+
 ;------------------------------------------------------------------------------
-
-
 
 
 ; LAYER BASE
