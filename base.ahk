@@ -6,7 +6,6 @@
 #SingleInstance Force
 
 
-
 ; TOOLTIP
 ;------------------------------------------------------------------------------
 
@@ -56,15 +55,15 @@
 
 ; MODIFIERS
 ;------------------------------------------------------------------------------
+  ; #SuspendExempt
+  ; Tab::Tab
+  ; CapsLock::LCtrl
+  ; LShift::LShift
 
-  Tab::Tab
-  CapsLock::LCtrl
-  LShift::LShift
-
-  Enter::Enter
-  RShift::RCtrl
-  /::RShift
-
+  ; Enter::Enter
+  ; RShift::RCtrl
+  ; /::RShift
+  ; #SuspendExempt False
 ;------------------------------------------------------------------------------
 
 
@@ -74,23 +73,15 @@
 
   Global current_layer := "BASE" ;"BASE" | "SYMBOL"
 
-  switch_layer_symbol(){
-    Global current_layer := "SYMBOL"
+  switch_layer(layer){
+    Global current_layer := layer
     custom_display(current_layer)
   }
 
-
-  switch_layer_number(){
-    Global current_layer := "NUMBER"
-    custom_display(current_layer)
-  }  
-
-
-  switch_layer_base(){
-    Global current_layer := "BASE"
-    custom_display(current_layer)
-  }      
-
+  one_shot(key, layer){
+    Send "{Raw}" . key
+    switch_layer(layer)
+  }
 ;------------------------------------------------------------------------------
 
 
@@ -109,7 +100,7 @@
     i::l
     o::u
     p::y
-    [::Return
+    [::,
     ]::Return
     \::Return
 
@@ -130,13 +121,15 @@
     z::x
     x::c
     c::d
-    v::switch_layer_symbol
+    v::switch_layer("SYMBOL")
     b::v
     n::z
     m::k
     ,::h
-    .::Return
-    ; $/::Return ; ASSIGNED TO RIGHT SHIFT
+    .::.
+    +.::,
+    /::_ 
+    +/::?
   #HotIf
 
 ;------------------------------------------------------------------------------
@@ -144,47 +137,58 @@
 
 ; LAYER SYMBOL
 ;------------------------------------------------------------------------------
-
   #HotIf current_layer = "SYMBOL"
     ; TOP ROW
     q::Return
-    w::Return
-    e::Return
-    r::Return
+    w::`
+    e::#
+    r::!
     t::Return
     y::Return
-    u::Return
-    i::Return
-    o::Return
-    p::Return
+    u::%
+    i::/
+    o::[
+    p::<
     [::Return
     ]::Return
     \::Return
 
     ; HOME ROW
-    a::Return
-    s::Return
-    d::Return
-    f::Return
+    a::&
+    s::|
+    d::>
+    f::{
+      Send "{Escape}"
+      switch_layer("BASE")
+    }
     g::Return
     h::Return
-    j::Return
-    k::Return
-    l::Return
-    `;::Return
-    '::Return
+    j::=
+    k::"
+    l::(
+    `;::`{
+    '::-
+    Enter::{
+      Send "{Enter}"
+      switch_layer("BASE")
+    }
 
     ; BOTTOM ROW
     z::Return
     x::Return
-    c::Return
-    v::Return
+    c::$
+    v::switch_layer("BASE")
     b::Return
-    n::Return
-    m::Return
-    ,::Return
-    .::Return
-    ; $/::Return ; ASSIGNED TO RIGHT SHIFT
+    n::+
+    m::;
+    ,:::
+    .::)
+    $/::}
+
+    Space::{
+      Send "{Space}"
+      switch_layer("BASE")
+    }
   #HotIf  
 
 ;------------------------------------------------------------------------------
