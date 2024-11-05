@@ -1,4 +1,5 @@
 ; CONVENTION
+
 ; built in identifiers are CamelCased 
 ; user defined identifers are snake_cased
 
@@ -70,17 +71,11 @@
 
 ; LAYER CONTROL
 ;------------------------------------------------------------------------------
-
-  Global current_layer := "BASE" ;"BASE" | "SYMBOL"
+  Global current_layer := "BASE" 
 
   switch_layer(layer){
     Global current_layer := layer
     custom_display(current_layer)
-  }
-
-  one_shot(key, layer){
-    Send "{Raw}" . key
-    switch_layer(layer)
   }
 ;------------------------------------------------------------------------------
 
@@ -100,7 +95,7 @@
     i::l
     o::u
     p::y
-    [::,
+    [::Return
     ]::Return
     \::Return
 
@@ -126,14 +121,137 @@
     n::z
     m::k
     ,::h
-    .::.
-    +.::,
-    /::_ 
-    +/::?
+    .::Return
+    +.::Return
+    /::Return 
+    +/::Return
+
+    $LAlt::{
+      Send "{LAlt Up}"
+      switch_layer("BASE_MOD_LEFT")
+    }
+
+    $RAlt::{
+      Send "{RAlt Up}"
+      switch_layer("BASE_MOD_RIGHT")
+    }    
   #HotIf
 
 ;------------------------------------------------------------------------------
 
+
+
+; LAYER BASE_MOD_RIGHT
+;------------------------------------------------------------------------------
+
+  #HotIf current_layer = "BASE_MOD_RIGHT"
+    ; TOP ROW
+    q::q
+    w::w
+    e::f
+    r::p
+    t::b
+    y::Return
+    u::Return
+    i::Return
+    o::Return
+    p::Return
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::a
+    s::r
+    d::s
+    f::t
+    g::g
+    h::Return
+    j::Return
+    k::RShift
+    l::RCtrl
+    `;::RAlt
+    '::Esc
+
+    ; BOTTOM ROW
+    z::x
+    x::c
+    c::d
+    v::Return
+    b::v
+    n::Return
+    m::Return
+    ,::Return
+    .::Return
+    +.::Return
+    /::Return
+    +/::Return
+    $RAlt Up::{
+      Send "{RAlt Up}"
+      Send "{RCtrl Up}"
+      Send "{RShift Up}"
+      switch_layer("BASE")
+    }
+  #HotIf
+
+;------------------------------------------------------------------------------
+
+
+; LAYER BASE_MOD_lEFT
+;------------------------------------------------------------------------------
+
+  #HotIf current_layer = "BASE_MOD_LEFT"
+    ; TOP ROW
+    q::Return
+    w::Return
+    e::Return
+    r::Return
+    t::Return
+    y::Return
+    u::j
+    i::l
+    o::u
+    p::y
+    [::,
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::LWin
+    s::LAlt
+    d::LCtrl
+    f::LShift
+    g::Return
+    h::Return
+    j::m
+    k::n
+    l::e
+    `;::i
+    '::o
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::Return
+    b::Return
+    n::z
+    m::k
+    ,::h
+    .::.
+    +.::,
+    /::_ 
+    +/::?
+
+    $LAlt Up::{
+      Send "{LAlt Up}"
+      Send "{LCtrl Up}"
+      Send "{LShift Up}"
+      switch_layer("BASE")
+    }
+  #HotIf
+
+;------------------------------------------------------------------------------
 
 ; LAYER SYMBOL
 ;------------------------------------------------------------------------------
@@ -157,10 +275,7 @@
     a::&
     s::|
     d::>
-    f::{
-      Send "{Escape}"
-      switch_layer("BASE")
-    }
+    f::Return
     g::Return
     h::Return
     j::=
@@ -191,4 +306,50 @@
     }
   #HotIf  
 
+;------------------------------------------------------------------------------
+
+
+; LAYER NUMBER
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "WINDOW"
+    j::{
+      Run "komorebic focus left", , "Hide"
+    }
+
+    k::{
+      Run "komorebic focus down", , "Hide"
+    }
+
+    l::{
+      Run "komorebic focus up", , "Hide"
+    }
+
+    `;::{
+      Run "komorebic focus right", , "Hide"
+    }
+
+    f & j::{ 
+      Run "komorebic move left", ,"Hide"
+    }
+
+    f & k::{ 
+      Run "komorebic move down", ,"Hide"
+    }
+
+    f & l::{ 
+      Run "komorebic move up", ,"Hide"
+    } 
+
+    f & `;::{ 
+      Run "komorebic move right", ,"Hide"
+    }
+
+    t::{
+      Run "komorebic change-layout bsp", , "Hide"
+    }
+
+    g::{
+      Run "komorebic toggle-monocle", ,"Hide"
+    }
+  #HotIf
 ;------------------------------------------------------------------------------
