@@ -63,3 +63,51 @@
     custom_display(current_layer)
   }
 ;------------------------------------------------------------------------------
+
+
+
+; BASE LAYER (COLEMAK WIDE)
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "BASE"
+    ; TOP ROW
+    q::q
+    w::w
+    e::f
+    r::p
+    t::g
+    y::Return
+    u::j
+    i::l
+    o::u
+    p::y
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::a
+    s::r
+    d::s
+    f::t
+    g::d
+    h::Return
+    j::h
+    k::n
+    l::e
+    `;::i
+    '::o
+
+    ; BOTTOM ROW
+    z::z
+    x::x
+    c::c
+    v::Return
+    b::v
+    n::b
+    m::k
+    ,::m
+    .::Return
+    /::Return 
+  #HotIf
+;------------------------------------------------------------------------------
+
