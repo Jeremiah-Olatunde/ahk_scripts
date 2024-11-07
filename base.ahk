@@ -207,7 +207,7 @@
     h::Return
     j::Return
     k::Return
-    l::Return
+    l::switch_layer("NUMBER")
     `;::Return
     '::switch_layer("BASE")
 
@@ -266,6 +266,51 @@
     n::Return
     m::Return
     ,::Return
+    .::Return
+    /::Return
+  #HotIf
+;------------------------------------------------------------------------------
+
+; NAVIGATION
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "NUMBER"
+    ; TOP ROW
+    q::Return
+    w::7
+    e::5
+    r::Return
+    t::Return
+    y::Return
+    u::Return
+    i::Return
+    o::4
+    p::6
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::-
+    s::3
+    d::1
+    f::9
+    g::_
+    h::Return
+    j::+
+    k::0
+    l::2
+    `;::/
+    '::switch_layer("BASE")
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::.
+    v::switch_layer("LAYER_SELECT")
+    b::Return
+    n::Return
+    m::8
+    ,::,
     .::Return
     /::Return
   #HotIf
