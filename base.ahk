@@ -200,9 +200,9 @@
 
     ; HOME ROW
     a::Return
-    s::Return
+    s::switch_layer("NAVIGATION")
     d::switch_layer("WINDOW")
-    f::switch_layer("NAVIGATION")
+    f::Return
     g::Return
     h::Return
     j::Return
@@ -226,3 +226,47 @@
 ;------------------------------------------------------------------------------
 
 
+; NAVIGATION
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "NAVIGATION"
+    ; TOP ROW
+    q::Return
+    w::Return
+    e::Return
+    r::Return
+    t::Return
+    y::Return
+    u::Return
+    i::Return
+    o::Home
+    p::End
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::Return
+    s::Return
+    d::LCtrl
+    f::LShift
+    g::Return
+    h::Return
+    j::Left
+    k::Down
+    l::Up
+    `;::Right
+    '::switch_layer("BASE")
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::switch_layer("LAYER_SELECT")
+    b::Return
+    n::Return
+    m::Return
+    ,::Return
+    .::Return
+    /::Return
+  #HotIf
+;------------------------------------------------------------------------------
