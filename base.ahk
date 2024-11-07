@@ -84,7 +84,6 @@
     \::Return 
 
     ; HOME ROW
-    CapsLock::switch_layer("WINDOW")
     a::a
     s::r
     d::s
@@ -98,11 +97,10 @@
     '::o
 
     ; BOTTOM ROW
-    LShift::switch_layer("NUM/NAV")
     z::x
     x::c
     c::d
-    v::Return
+    v::switch_layer("LAYER_SELECT")
     b::v
     n::z
     m::k
@@ -119,9 +117,9 @@
   #HotIf current_layer = "WINDOW"
     ; TOP ROW
     q::Return
-    w::Run("subl -n")
-    e::Run("powershell")
-    r::Run("firefox")
+    w::Return
+    e::Return
+    r::Return
     t::Run("komorebic change-layout columns", , "Hide")
     y::Return
     u::{
@@ -147,25 +145,21 @@
     g::Return
     h::Return
 
-    j::Left
-    f & j::Run("komorebic focus left", , "Hide")
+    j::Run("komorebic focus left", , "Hide")
     d & j::Run("komorebic move left", , "Hide")
-    s & j::Run("komorebic resize-axis horizontal increase", , "Hide")
+    f & j::Run("komorebic resize-axis horizontal increase", , "Hide")
 
-    k::Down
-    f & k::Run("komorebic focus down", , "Hide")
+    k::Run("komorebic focus down", , "Hide")
     d & k::Run("komorebic move down", , "Hide")
-    s & k::Run("komorebic resize-axis vertical decrease", , "Hide")
+    f & k::Run("komorebic resize-axis vertical decrease", , "Hide")
 
-    l::Up
-    f & l::Run("komorebic focus up", , "Hide")
+    l::Run("komorebic focus up", , "Hide")
     d & l::Run("komorebic move up", , "Hide")
-    s & l::Run("komorebic resize-axis vertical increase", , "Hide")
+    f & l::Run("komorebic resize-axis vertical increase", , "Hide")
 
-    `;::Right
-    f & `;::Run("komorebic focus right", , "Hide")
+    `;::Run("komorebic focus right", , "Hide")
     d & `;::Run("komorebic move right", , "Hide")
-    s & `;::Run("komorebic resize-axis horizontal decrease", , "Hide")
+    f & `;::Run("komorebic resize-axis horizontal decrease", , "Hide")
 
     '::switch_layer("BASE")
 
@@ -175,8 +169,8 @@
     z::Return
     x::WinClose("A")
     c::Run("komorebic change-layout bsp", , "Hide")
-    v::Run("komorebic flip-layout horizontal", , "Hide")
-    b::Return
+    v::switch_layer("LAYER_SELECT")
+    b::Run("komorebic flip-layout horizontal", , "Hide")
     n::Return
     m::Run("komorebic focus-workspace 2", , "Hide")
     d & m::Run("komorebic move-to-workspace 2", , "Hide")
@@ -185,3 +179,50 @@
     /::Return 
   #HotIf
 ;------------------------------------------------------------------------------
+
+; LAYER SELECT
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "LAYER_SELECT"
+    ; TOP ROW
+    q::Return
+    w::Run("chrome")
+    e::Run("subl -n")
+    r::Return
+    t::Return
+    y::Return
+    u::Return
+    i::Return
+    o::Run("powershell")
+    p::Run("firefox")
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::Return
+    s::Return
+    d::switch_layer("WINDOW")
+    f::switch_layer("NAVIGATION")
+    g::Return
+    h::Return
+    j::Return
+    k::Return
+    l::Return
+    `;::Return
+    '::switch_layer("BASE")
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::Return
+    b::Return
+    n::Return
+    m::Return
+    ,::Return
+    .::Return
+    /::Return
+  #HotIf
+;------------------------------------------------------------------------------
+
+
