@@ -107,10 +107,125 @@
     ,::h
     .::Return
     /::Return 
+
+    $LAlt::{
+      Send "{LAlt Up}"
+      switch_layer("BASE(MOD_LEFT)")
+    }
+
+    $RAlt::{
+      Send "{RAlt Up}"
+      switch_layer("BASE(MOD_RIGHT)")
+    }      
   #HotIf
 ;------------------------------------------------------------------------------
 
 
+; BASE LAYER (MOD LEFT)
+; SYMBOL
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "BASE(MOD_LEFT)"
+    ; TOP ROW
+    q::Return
+    w::Return
+    e::Return
+    r::Return
+    t::Return
+    y::Return
+    u::j
+    i::l
+    o::u
+    p::y
+    [::Return
+    ]::Return
+    \::Return 
+
+    ; HOME ROW
+    a::Return
+    s::LAlt
+    d::LCtrl
+    f::LShift
+    g::Return
+    h::Return
+    j::m
+    k::n
+    l::e
+    `;::i
+    '::o
+    
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::Return
+    b::Return
+    n::z
+    m::k
+    ,::h
+    .::Return
+    /::Return 
+
+    $LAlt Up::{
+      Send "{LAlt Up}"
+      Send "{LCtrl Up}"
+      Send "{LShift Up}"
+      switch_layer("BASE")
+    }    
+  #HotIf
+;------------------------------------------------------------------------------
+
+
+; SYMBOL
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "BASE(MOD_RIGHT)"
+    ; TOP ROW
+    q::q
+    w::w
+    e::f
+    r::p
+    t::b
+    y::Return
+    u::Return
+    i::Return
+    o::Return
+    p::Return
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::a
+    s::r
+    d::s
+    f::t
+    g::g
+    h::Return
+    j::Return
+    k::RShift
+    l::RCtrl
+    `;::RAlt
+    '::Return
+
+    ; BOTTOM ROW
+    z::x
+    x::c
+    c::d
+    v::Return
+    b::v
+    n::Return
+    m::Return
+    ,::Return
+    .::Return
+    /::Return
+
+    $RAlt Up::{
+      Send "{RAlt Up}"
+      Send "{RCtrl Up}"
+      Send "{RShift Up}"
+      switch_layer("BASE")
+    }      
+  #HotIf
+;------------------------------------------------------------------------------
 
 ; WINDOW
 ;------------------------------------------------------------------------------
@@ -320,7 +435,7 @@
 
 ; SYMBOL
 ;------------------------------------------------------------------------------
-  #HotIf current_layer = "NUMBER"
+  #HotIf current_layer = "SYMBOL"
     ; TOP ROW
     q::Return
     w::Return
