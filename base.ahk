@@ -315,3 +315,50 @@
     /::Return
   #HotIf
 ;------------------------------------------------------------------------------
+
+
+
+; SYMBOL
+;------------------------------------------------------------------------------
+  #HotIf current_layer = "NUMBER"
+    ; TOP ROW
+    q::Return
+    w::Return
+    e::Return
+    r::Return
+    t::Return
+    y::Return
+    u::Return
+    i::Return
+    o::Return
+    p::Return
+    [::Return
+    ]::Return
+    \::Return
+
+    ; HOME ROW
+    a::Return
+    s::Return
+    d::Return
+    f::Return
+    g::Return
+    h::Return
+    j::Return
+    k::Return
+    l::Return
+    `;::Return
+    '::switch_layer("BASE")
+
+    ; BOTTOM ROW
+    z::Return
+    x::Return
+    c::Return
+    v::switch_layer("LAYER_SELECT")
+    b::Return
+    n::Return
+    m::Return
+    ,::,
+    .::Return
+    /::Return
+  #HotIf
+;------------------------------------------------------------------------------
