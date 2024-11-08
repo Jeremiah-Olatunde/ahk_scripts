@@ -141,7 +141,7 @@
     a::Return
     s::Return
     d::Return
-    f::Run("komorebic toggle-monocle", , "Hide")
+    f::Return
     g::Return
     h::Return
 
@@ -171,7 +171,7 @@
     c::Run("komorebic change-layout bsp", , "Hide")
     v::switch_layer("LAYER_SELECT")
     b::Run("komorebic flip-layout horizontal", , "Hide")
-    n::Return
+    n::Run("komorebic toggle-monocle", , "Hide")
     m::Run("komorebic focus-workspace 2", , "Hide")
     d & m::Run("komorebic move-to-workspace 2", , "Hide")
     ,::Return
@@ -206,7 +206,7 @@
     g::Return
     h::Return
     j::Return
-    k::Return
+    k::switch_layer("SYMBOL")
     l::switch_layer("NUMBER")
     `;::Return
     '::switch_layer("BASE")
@@ -271,41 +271,41 @@
   #HotIf
 ;------------------------------------------------------------------------------
 
-; NAVIGATION
+; NUMBER
 ;------------------------------------------------------------------------------
   #HotIf current_layer = "NUMBER"
     ; TOP ROW
     q::Return
-    w::7
-    e::5
+    w::Return
+    e::Return
     r::Return
     t::Return
     y::Return
     u::Return
     i::Return
-    o::4
-    p::6
+    o::8
+    p::Return
     [::Return
     ]::Return
     \::Return
 
     ; HOME ROW
-    a::-
-    s::3
-    d::1
-    f::9
-    g::_
+    a::9
+    s::5
+    d::0
+    f::3
+    g::7
     h::Return
-    j::+
-    k::0
-    l::2
-    `;::/
+    j::6
+    k::2
+    l::1
+    `;::4
     '::switch_layer("BASE")
 
     ; BOTTOM ROW
     z::Return
     x::Return
-    c::.
+    c::Return
     v::switch_layer("LAYER_SELECT")
     b::Return
     n::Return
